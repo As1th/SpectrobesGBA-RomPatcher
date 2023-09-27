@@ -75,17 +75,17 @@ header{text-align:center}
 header h1{margin:0}
 header img{max-width:90%; height:192px;}
 
-footer, header{
+footer{
 	text-align:center;
 	color:#767b86;
 	font-size:85%;
 }
-footer a, header a{
+footer a{
 	color:#969ba6;
 	text-decoration:none;
 	border-bottom:1px solid #464b56;
 }
-footer a:hover, header a:hover{
+footer a:hover{
 	color:white;
 	border-color:#41d5ff;
 }
