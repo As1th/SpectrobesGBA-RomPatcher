@@ -149,7 +149,7 @@ function fetchPatch(customPatchIndex, compressedFileIndex){
 				setMessage('apply');
 			})
 			.catch(function(evt){
-				setMessage('apply', (_('error_downloading')/* + evt.message */).replace('%s', CUSTOM_PATCHER[customPatchIndex].file.replace(/^.*[\/\\]/g,'')), 'error');
+				setMessage('apply', (_('error_downloading') + evt.message ).replace('%s', CUSTOM_PATCHER[customPatchIndex].file.replace(/^.*[\/\\]/g,'')), 'error');
 			});
 	}else{
 		var xhr=new XMLHttpRequest();
