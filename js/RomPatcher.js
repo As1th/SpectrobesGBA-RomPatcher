@@ -546,19 +546,20 @@ function updateChecksums(file, startOffset, force){
 		window.setTimeout(function(){
 			el('crc32').innerHTML=padZeroes(crc32(file, startOffset), 4);
 			el('md5').innerHTML=padZeroes(md5(file, startOffset), 16);
-if(el('crc32').innerHTML == 'dd88761c'){
-			el('input-file-patch').value = 0,0;
-			el('md5').innerHTML='1';
+			if(el('crc32').innerHTML == 'dd88761c'){
+				el('input-file-patch').value = "0,0";
+				el('md5').innerHTML='1';
+				fetchPatch(0,0);
 			
-			
-		} else if(el('crc32').innerHTML == '84ee4776'){
+			} else if(el('crc32').innerHTML == '84ee4776'){
 				el('input-file-patch').value = "0,1";
 				el('md5').innerHTML='2';
-		} else 
-		{
-			
-			
-		}
+				fetchPatch(0,1);
+			} else 
+			{
+				
+				
+			}
 			validateSource();
 			setTabApplyEnabled(true);
 		}, 30);
