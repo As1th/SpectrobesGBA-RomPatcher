@@ -532,7 +532,7 @@ function updateChecksums(file, startOffset, force){
 	el('crc32').innerHTML='Calculating...';
 	el('md5').innerHTML='Calculating...';
 
-	if(CAN_USE_WEB_WORKERS){
+	if(false){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		
@@ -546,20 +546,7 @@ function updateChecksums(file, startOffset, force){
 		window.setTimeout(function(){
 			el('crc32').innerHTML=padZeroes(crc32(file, startOffset), 4);
 			el('md5').innerHTML=padZeroes(md5(file, startOffset), 16);
-el('md5').innerHTML='3';
-			validateSource();
-			setTabApplyEnabled(true);
-		}, 30);
-
-		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
-			el('sha1').innerHTML='Calculating...';
-			sha1(file);
-		}
-	}
-}
-
-function validateSource(){
-	if(el('crc32').innerHTML == 'dd88761c'){
+if(el('crc32').innerHTML == 'dd88761c'){
 			el('input-file-patch').value = 0,0;
 			el('md5').innerHTML='1';
 			
@@ -572,6 +559,19 @@ function validateSource(){
 			
 			
 		}
+			validateSource();
+			setTabApplyEnabled(true);
+		}, 30);
+
+		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
+			el('sha1').innerHTML='Calculating...';
+			sha1(file);
+		}
+	}
+}
+
+function validateSource(){
+	
 	if(patch && romFile && typeof patch.validateSource !== 'undefined'){
 		if(patch.validateSource(romFile, el('checkbox-removeheader').checked && hasHeader(romFile))){
 			el('crc32').className='valid';
