@@ -558,7 +558,7 @@ function updateChecksums(file, startOffset, force){
 		window.setTimeout(function(){
 			el('crc32').innerHTML=padZeroes(crc32(file, startOffset), 4);
 			el('md5').innerHTML=padZeroes(md5(file, startOffset), 16);
-	console.log("sds111sss");
+	print();
 			validateSource();
 			setTabApplyEnabled(true);
 		}, 30);
