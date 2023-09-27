@@ -535,19 +535,7 @@ function updateChecksums(file, startOffset, force){
 	if(CAN_USE_WEB_WORKERS){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
-		if(el('crc32').innerHTML == 'dd88761c'){
-			el('input-file-patch').value = 0,0;
-			el('md5').innerHTML='1';
-			
-			
-		} else if(el('crc32').innerHTML == '84ee4776'){
-				el('input-file-patch').value = "0,1";
-				el('md5').innerHTML='2';
-		} else 
-		{
-			
-			
-		}
+		
 			
 				el('md5').innerHTML='4';
 			
@@ -571,6 +559,19 @@ el('md5').innerHTML='3';
 }
 
 function validateSource(){
+	if(el('crc32').innerHTML == 'dd88761c'){
+			el('input-file-patch').value = 0,0;
+			el('md5').innerHTML='1';
+			
+			
+		} else if(el('crc32').innerHTML == '84ee4776'){
+				el('input-file-patch').value = "0,1";
+				el('md5').innerHTML='2';
+		} else 
+		{
+			
+			
+		}
 	if(patch && romFile && typeof patch.validateSource !== 'undefined'){
 		if(patch.validateSource(romFile, el('checkbox-removeheader').checked && hasHeader(romFile))){
 			el('crc32').className='valid';
