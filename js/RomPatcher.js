@@ -548,13 +548,9 @@ function updateChecksums(file, startOffset, force){
 			
 			
 		}
-if(selectedPatch.fetchedFile){
+			
 				parseCustomPatch(selectedPatch);
-			}else{
-				patch=null;
-				patchFile=null;
-				fetchPatch(selectedCustomPatchIndex, selectedCustomPatchCompressedIndex);
-			}
+			
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
 		}
