@@ -302,7 +302,7 @@ addEvent(window,'load',function(){
 	UI.localize();
 
 	
-	el('row-file-patch').title='Most current patch is automatically selected';
+	el('row-file-patch').title=_('compatible_formats')+' IPS, UPS, APS, BPS, RUP, PPF, MOD (Paper Mario Star Rod), xdelta';
 	
 	el('input-file-rom').value='';
 	el('input-file-patch').value='';
@@ -536,21 +536,10 @@ function updateChecksums(file, startOffset, force){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 
-		if(el('crc32').innerHTML == 'dd88761c'){
-			customPatchIndex = 0;
-		} else if(el('crc32').innerHTML == 'xx'){
-			customPatchIndex = 1;
-		} else 
-		{
-			
-			
-		}
-
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
 		}
 	}else{
-
 		window.setTimeout(function(){
 			el('crc32').innerHTML=padZeroes(crc32(file, startOffset), 4);
 			el('md5').innerHTML=padZeroes(md5(file, startOffset), 16);
