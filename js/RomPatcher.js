@@ -537,7 +537,7 @@ function updateChecksums(file, startOffset, force){
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		
 			
-				el('md5').innerHTML='4';
+			
 			
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
@@ -548,12 +548,12 @@ function updateChecksums(file, startOffset, force){
 			el('md5').innerHTML=padZeroes(md5(file, startOffset), 16);
 			if(el('crc32').innerHTML == 'dd88761c'){
 				el('input-file-patch').value = "0,0";
-				el('md5').innerHTML='1';
+				
 				fetchPatch(0,0);
 			
 			} else if(el('crc32').innerHTML == '84ee4776'){
 				el('input-file-patch').value = "0,1";
-				el('md5').innerHTML='2';
+				
 				fetchPatch(0,1);
 			} else 
 			{
