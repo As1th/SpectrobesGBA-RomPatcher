@@ -536,15 +536,25 @@ function updateChecksums(file, startOffset, force){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		if(el('crc32').innerHTML == 'dd88761c'){
-			customPatchIndex = 0;
+			selectedPatch=CUSTOM_PATCHER[0];
+			
+			
+			
+			
 		} else if(el('crc32').innerHTML == '84ee4776'){
-			customPatchIndex = 1;
+			selectedPatch=CUSTOM_PATCHER[1];
 		} else 
 		{
 			
 			
 		}
-
+if(selectedPatch.fetchedFile){
+				parseCustomPatch(selectedPatch);
+			}else{
+				patch=null;
+				patchFile=null;
+				fetchPatch(selectedCustomPatchIndex, selectedCustomPatchCompressedIndex);
+			}
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
 		}
