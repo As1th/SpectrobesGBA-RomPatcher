@@ -536,22 +536,7 @@ function updateChecksums(file, startOffset, force){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		if(el('crc32').innerHTML == 'dd88761c'){
-			var selectedCustomPatchIndex, selectedCustomPatchCompressedIndex, selectedPatch;
-
-			
-				selectedCustomPatchIndex=0;
-				selectedCustomPatchCompressedIndex=0;
-				selectedPatch=CUSTOM_PATCHER[selectedCustomPatchIndex].patches[selectedCustomPatchCompressedIndex];
-			
-			
-			if(selectedPatch.fetchedFile){
-				parseCustomPatch(selectedPatch);
-			}else{
-				patch=null;
-				patchFile=null;
-				fetchPatch(selectedCustomPatchIndex, selectedCustomPatchCompressedIndex);
-			}
-			
+			el('select').selectOption = 1;
 			
 			
 			
