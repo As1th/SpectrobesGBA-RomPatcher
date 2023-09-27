@@ -537,7 +537,7 @@ function updateChecksums(file, startOffset, force){
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		if(el('crc32').innerHTML == 'dd88761c'){
 			el('input-file-patch').value = 0,0;
-			console.log("sdssss");
+			print();
 			
 			
 		} else if(el('crc32').innerHTML == '84ee4776'){
