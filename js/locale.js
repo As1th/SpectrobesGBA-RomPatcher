@@ -7,8 +7,8 @@ const LOCALIZATION={
 		'light_theme':				'Light theme',
 
 		'apply_patch':				'Apply patch',
-		'rom_file':					'ROM file:',
-		'patch_file':				'Patch file:',
+		'rom_file':					'Your Firered ROM:',
+		'patch_file':				'SpectrobesGBA Version:',
 		'remove_header':			'Remove header',
 		'add_header':				'Add temporary header',
 		'compatible_formats':		'Compatible formats:',
