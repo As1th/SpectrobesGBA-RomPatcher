@@ -536,12 +536,12 @@ function updateChecksums(file, startOffset, force){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
 		if(el('crc32').innerHTML == 'dd88761c'){
-			el('select').value = 0,0;
+			el('input-file-patch').value = 0,0;
 			
 			
 			
 		} else if(el('crc32').innerHTML == '84ee4776'){
-				el('select').value = "0,1";
+				el('input-file-patch').value = "0,1";
 		} else 
 		{
 			
