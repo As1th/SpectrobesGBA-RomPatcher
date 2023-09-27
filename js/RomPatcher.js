@@ -535,6 +535,15 @@ function updateChecksums(file, startOffset, force){
 	if(CAN_USE_WEB_WORKERS){
 		setTabApplyEnabled(false);
 		webWorkerCrc.postMessage({u8array:file._u8array, startOffset:startOffset}, [file._u8array.buffer]);
+		if(el('crc32').innerHTML == 'dd88761c'){
+			customPatchIndex = 1;
+		} else if(el('crc32').innerHTML == 'xx'){
+			customPatchIndex = 0;
+		} else 
+		{
+			
+			
+		}
 
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
