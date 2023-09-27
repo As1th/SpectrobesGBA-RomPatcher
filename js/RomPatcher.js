@@ -549,7 +549,7 @@ function updateChecksums(file, startOffset, force){
 			
 		}
 			
-				
+				el('md5').innerHTML='4';
 			
 		if(window.crypto&&window.crypto.subtle&&window.crypto.subtle.digest){
 			el('sha1').innerHTML='Calculating...';
