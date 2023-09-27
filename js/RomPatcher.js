@@ -579,7 +579,7 @@ function validateSource(){
 			setMessage('apply');
 		}else{
 			el('crc32').className='invalid';
-			setMessage('apply', 'error_crc_input', 'warning');
+			setMessage('apply', 'error_crc_input', 'error');
 		}
 	}else{
 		el('crc32').className='';
