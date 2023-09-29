@@ -579,9 +579,11 @@ function validateSource(){
 		if(patch.validateSource(romFile, el('checkbox-removeheader').checked && hasHeader(romFile))){
 			el('crc32').className='valid';
 			setMessage('apply');
+			el('button-apply').disabled=false;
+			setTabApplyEnabled(true);
 		}else{
 			el('crc32').className='invalid';
-			el('button-apply').className='disabled';
+			el('button-apply').disabled=true;
 			setMessage('apply', 'error_crc_input', 'error');
 			setTabApplyEnabled(false);
 		}
