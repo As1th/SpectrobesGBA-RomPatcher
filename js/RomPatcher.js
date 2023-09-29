@@ -471,6 +471,7 @@ addEvent(window,'load',function(){
 	});
 	addEvent(el('button-apply'), 'click', function(){
 		applyPatch(patch, romFile, false);
+		el('md5').innerHTML = "sdsdsdsd"
 	});
 	addEvent(el('button-create'), 'click', function(){
 		createPatch(romFile1, romFile2, el('select-patch-type').value);
