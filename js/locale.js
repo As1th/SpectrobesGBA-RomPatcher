@@ -13,7 +13,7 @@ const LOCALIZATION={
 		'add_header':				'Add temporary header',
 		'compatible_formats':		'Compatible formats:',
 		'applying_patch':			'Applying patch...',
-		'downloading':				'Downloading...',
+		'downloading':				'Loading Patches...',
 		'unzipping':				'Unzipping...',
 		'fix_checksum_prompt':		'Fix ROM header checksum?',
 

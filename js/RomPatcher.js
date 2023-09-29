@@ -580,6 +580,7 @@ function validateSource(){
 		}else{
 			el('crc32').className='invalid';
 			setMessage('apply', 'error_crc_input', 'error');
+			setTabApplyEnabled(false);
 		}
 	}else{
 		el('crc32').className='';
