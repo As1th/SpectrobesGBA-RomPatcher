@@ -134,9 +134,17 @@ Game by <a href="https://twitter.com/AsithDevs">Asith</a>
 		</div>
 		<div class="buttons">
 			<span id="message-apply" class="message"></span>
-			<button id="button-apply" data-localize="apply_patch" class="disabled" disabled>Apply patch</button>
+						<button id="button-apply" data-localize="apply_patch" class="disabled" disabled onclick="clickDownload()">Apply patch</button>
 		</div>
 	</div>
+<script>
+function clickDownload()
+{
+	applyPatch(patch, romFile, false);
+}
+
+
+</script>
 
 
 

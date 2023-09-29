@@ -470,9 +470,9 @@ addEvent(window,'load',function(){
 		setCreatorMode(!/enabled/.test(el('switch-create').className));
 	});
 	addEvent(el('button-apply'), 'click', function(){
-		el('md5').innerHTML='';
+	
 		applyPatch(patch, romFile, false);
-		el('md5').innerHTML = "sdsdsdsd";
+	
 	});
 	addEvent(el('button-create'), 'click', function(){
 		createPatch(romFile1, romFile2, el('select-patch-type').value);
@@ -941,7 +941,7 @@ function setTabApplyEnabled(status){
 	if(romFile && status && (patch || isCustomPatcherEnabled())){
 		setElementEnabled('button-apply', status);
 	}else{
-		setElementEnabled('button-apply', true);
+		setElementEnabled('button-apply', false);
 	}
 }
 function setCreatorMode(creatorMode){
