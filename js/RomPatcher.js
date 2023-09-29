@@ -581,6 +581,7 @@ function validateSource(){
 			setMessage('apply');
 		}else{
 			el('crc32').className='invalid';
+			el('button-apply').className='disabled';
 			setMessage('apply', 'error_crc_input', 'error');
 			setTabApplyEnabled(false);
 		}
