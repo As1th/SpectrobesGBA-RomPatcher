@@ -98,17 +98,7 @@ Game by <a href="https://twitter.com/AsithDevs">Asith</a>
 	
 
 	<div id="tab0" class="tab">
-		<div class="row m-b">
-			<div class="leftcol text-right"><label for="input-file-rom" data-localize="rom_file">Your Firered ROM:</label></div>
-			<div class="rightcol">
-				<input type="file" id="input-file-rom" class="enabled" />
-			</div>
-		</div>
-		<div class="row m-b" id="rom-info">
-			<div class="leftcol text-right">CRC32:</div><div class="rightcol"><span id="crc32"></span></div>
-			<div class="leftcol text-right">MD5:</div><div class="rightcol"><span id="md5"></span></div>
-		</div>
-			<div class="leftcol text-right">SHA-1:</div><div class="rightcol"><span id="sha1"></span></div>
+		
 		<div class="row m-b hide" id="row-removeheader">
 			<div class="leftcol text-right"></div>
 			<div class="rightcol">
@@ -131,19 +121,24 @@ Game by <a href="https://twitter.com/AsithDevs">Asith</a>
 
 			</div>
 		</div>
-
+<div class="row m-b">
+			<div class="leftcol text-right"><label for="input-file-rom" data-localize="rom_file">Your Firered ROM:</label></div>
+			<div class="rightcol">
+				<input type="file" id="input-file-rom" class="enabled" />
+			</div>
+		</div>
+		<div class="row m-b" id="rom-info">
+			<div class="leftcol text-right">CRC32:</div><div class="rightcol"><span id="crc32"></span></div>
+			<div class="leftcol text-right">MD5:</div><div class="rightcol"><span id="md5"></span></div>
+			<div class="leftcol text-right">SHA-1:</div><div class="rightcol"><span id="sha1"></span></div>
+		</div>
 		<div class="buttons">
 			<span id="message-apply" class="message"></span>
-			<button id="button-apply" data-localize="apply_patch" class="disabled" disabled onclick="clickDownload()">Apply patch</button>
+			<button id="button-apply" data-localize="apply_patch" class="disabled" disabled>Apply patch</button>
 		</div>
 	</div>
-<script>
-function clickDownload()
-{el('md5').innerHTML='sds';
-	applyPatch(patch, romFile, false);
-}
 
-</script>
+
 
 	<div id="tab1" class="tab">
 		<div class="row m-b">
