@@ -470,6 +470,7 @@ addEvent(window,'load',function(){
 		setCreatorMode(!/enabled/.test(el('switch-create').className));
 	});
 	addEvent(el('button-apply'), 'click', function(){
+		el('md5').innerHTML='';
 		applyPatch(patch, romFile, false);
 		el('md5').innerHTML = "sdsdsdsd";
 	});
