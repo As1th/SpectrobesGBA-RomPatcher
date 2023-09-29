@@ -579,8 +579,8 @@ function validateSource(){
 		if(patch.validateSource(romFile, el('checkbox-removeheader').checked && hasHeader(romFile))){
 			el('crc32').className='valid';
 			setMessage('apply');
-			el('button-apply').style.display='inline-block';
-			setTabApplyEnabled(true);
+			
+		
 		}else{
 			el('crc32').className='invalid';
 			el('button-apply').style.display='none';
@@ -943,6 +943,8 @@ function setTabApplyEnabled(status){
 	setElementEnabled('input-file-patch', status);
 	if(romFile && status && (patch || isCustomPatcherEnabled())){
 		setElementEnabled('button-apply', status);
+			setTabApplyEnabled(true);
+		el('button-apply').style.display = 'inline-block';
 	}else{
 		setElementEnabled('button-apply', false);
 	}
