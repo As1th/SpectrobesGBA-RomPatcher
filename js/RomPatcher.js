@@ -487,8 +487,6 @@ addEvent(window,'load',function(){
 
 
 
-
-
 	//setCreatorMode(true);
 });
 
@@ -941,7 +939,7 @@ function setTabApplyEnabled(status){
 	if(romFile && status && (patch || isCustomPatcherEnabled())){
 		setElementEnabled('button-apply', status);
 	}else{
-		setElementEnabled('button-apply', true);
+		setElementEnabled('button-apply', false);
 	}
 }
 function setCreatorMode(creatorMode){
