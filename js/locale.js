@@ -23,7 +23,7 @@ const LOCALIZATION={
 		'patch_type':				'Patch type:',
 		'creating_patch':			'Creating patch...',
 
-		'error_crc_input':			'Could not identify valid Firered ROM. Please ensure you select a correct Firered GBA ROM. (Source ROM checksum mismatch)',
+		'error_crc_input':			'Could not identify valid Firered ROM. Please ensure you select a clean Firered GBA ROM. (Source ROM checksum mismatch)',
 		'error_crc_output':			'Target ROM checksum mismatch',
 		'error_crc_patch':			'Patch checksum mismatch',
 		'error_downloading':		'Error loading %s',
