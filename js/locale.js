@@ -11,7 +11,7 @@ const LOCALIZATION={
 		'patch_file':				'Spectrobes GBA Version:',
 		'remove_header':			'Remove header',
 		'add_header':				'Add temporary header',
-		'compatible_formats':		'Compatible formats:',
+		'compatible_formats':		'Latest version automatically selected',
 		'applying_patch':			'Applying patch...',
 		'downloading':				'Loading Patches...',
 		'unzipping':				'Unzipping...',

@@ -302,7 +302,7 @@ addEvent(window,'load',function(){
 	UI.localize();
 
 	
-	el('row-file-patch').title=_('compatible_formats')+' IPS, UPS, APS, BPS, RUP, PPF, MOD (Paper Mario Star Rod), xdelta';
+	el('row-file-patch').title=_('compatible_formats');
 	
 	el('input-file-rom').value='';
 	el('input-file-patch').value='';

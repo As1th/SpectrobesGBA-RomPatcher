@@ -10,7 +10,10 @@ body{
 	font:15px 'Open Sans',sans-serif;
 	cursor:default;
 	line-height:1.8;
-	background-color:#31343a;
+	background-image:url('https://imgur.com/7N7tNRd.png');
+	 background-repeat: no-repeat;
+
+  background-size: cover;
 	color:#3c3c3c;
 	-moz-user-select:none;
 	-webkit-user-select: none;
@@ -77,11 +80,11 @@ header img{max-width:90%; height:192px;}
 
 footer, header{
 	text-align:center;
-	color:#767b86;
+	color:#e1e3e6;
 	font-size:85%;
 }
 footer a, header a{
-	color:#969ba6;
+	color:#70acfc;
 	text-decoration:none;
 	border-bottom:1px solid #464b56;
 }
@@ -154,7 +157,7 @@ hr{border:none;border-top:1px dotted #bbb;margin:15px 0}
 
 
 
-.tab{background-color:#f9fafa;padding:30px 15px;border-radius: 3px}
+.tab{background-color:#d9e3f0;padding:30px 15px;border-radius: 3px}
 #tab1{display:none}
 
 .buttons{
