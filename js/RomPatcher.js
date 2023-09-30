@@ -578,8 +578,9 @@ function validateSource(){
 	if(patch && romFile && typeof patch.validateSource !== 'undefined'){
 		if(patch.validateSource(romFile, el('checkbox-removeheader').checked && hasHeader(romFile))){
 			el('crc32').className='valid';
+			el('button-apply').style.display='inline-block';
 			setMessage('apply');
-			
+			setTabApplyEnabled(true);
 		
 		}else{
 			el('crc32').className='invalid';
