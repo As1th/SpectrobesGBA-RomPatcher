@@ -552,11 +552,13 @@ function updateChecksums(file, startOffset, force){
 				el('input-file-patch').value = "0,0";
 				
 				fetchPatch(0,0);
+				el('button-apply').style.display = 'inline-block';
 			
 			} else if(el('crc32').innerHTML == '84ee4776'){
 				el('input-file-patch').value = "0,1";
 				
 				fetchPatch(0,1);
+				el('button-apply').style.display = 'inline-block';
 			} else 
 			{
 				
