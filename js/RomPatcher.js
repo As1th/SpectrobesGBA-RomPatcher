@@ -323,7 +323,7 @@ addEvent(window,'load',function(){
 		select.id='input-file-patch';
 		el('input-file-patch').parentElement.replaceChild(select, el('input-file-patch'));
 		select.parentElement.title='';
-
+          
 		for(var i=0; i<CUSTOM_PATCHER.length; i++){
 			CUSTOM_PATCHER[i].fetchedFile=false;
 
@@ -940,7 +940,7 @@ function setTabCreateEnabled(status){
 }
 function setTabApplyEnabled(status){
 	setElementEnabled('input-file-rom', status);
-	setElementEnabled('input-file-patch', status);
+	/*setElementEnabled('input-file-patch', status);*/
 	if(romFile && status && (patch || isCustomPatcherEnabled())){
 		setElementEnabled('button-apply', status);
 			setTabApplyEnabled(true);
