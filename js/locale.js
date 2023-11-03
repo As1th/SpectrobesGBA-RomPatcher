@@ -6,7 +6,7 @@ const LOCALIZATION={
 		'fix_checksum':				'Fix ROM header checksum',
 		'light_theme':				'Light theme',
 
-		'apply_patch':				'DOWNLOAD',
+		'apply_patch':				'DOWNLOAD ✓',
 		'rom_file':					'Your Firered ROM:',
 		'patch_file':				'Spectrobes GBA Version:',
 		'remove_header':			'Remove header',
