@@ -719,7 +719,7 @@ function preparePatchedRom(originalRom, patchedRom, headerSize){
 	if(AppSettings.outputFileNameMatch){
 		patchedRom.fileName=patchFile.fileName.replace(/\.\w+$/i, (/\.\w+$/i.test(originalRom.fileName)? originalRom.fileName.match(/\.\w+$/i)[0] : ''));
 	}else{
-		patchedRom.fileName=originalRom.fileName.replace(/\.([^\.]*?)$/, ' (patched).$1');
+		patchedRom.fileName="SpectrobesGBA.$1');"
 	}
 	patchedRom.fileType=originalRom.fileType;
 	if(headerSize){
