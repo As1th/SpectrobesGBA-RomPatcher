@@ -719,7 +719,7 @@ function preparePatchedRom(originalRom, patchedRom, headerSize){
 	if(AppSettings.outputFileNameMatch){
 		patchedRom.fileName=patchFile.fileName.replace(/\.\w+$/i, (/\.\w+$/i.test(originalRom.fileName)? originalRom.fileName.match(/\.\w+$/i)[0] : ''));
 	}else{
-		patchedRom.fileName="SpectrobesGBA.gba";
+		patchedRom.fileName="Spectrobes.gba";
 	}
 	patchedRom.fileType=originalRom.fileType;
 	if(headerSize){
