@@ -715,26 +715,37 @@ function _readPatchFile(){
 
 
 
-function preparePatchedRom(originalRom, patchedRom, headerSize){
-	if(AppSettings.outputFileNameMatch){
-		patchedRom.fileName=patchFile.fileName.replace(/\.\w+$/i, (/\.\w+$/i.test(originalRom.fileName)? originalRom.fileName.match(/\.\w+$/i)[0] : ''));
-	}else{
-		patchedRom.fileName="Spectrobes.gba";
-	}
-	patchedRom.fileType=originalRom.fileType;
-	if(headerSize){
-		if(el('checkbox-removeheader').checked){
-			var patchedRomWithOldHeader=new MarcFile(headerSize+patchedRom.fileSize);
-			oldHeader.copyToFile(patchedRomWithOldHeader, 0);
-			patchedRom.copyToFile(patchedRomWithOldHeader, 0, patchedRom.fileSize, headerSize);
-			patchedRomWithOldHeader.fileName=patchedRom.fileName;
-			patchedRomWithOldHeader.fileType=patchedRom.fileType;
-			patchedRom=patchedRomWithOldHeader;
-		}else if(el('checkbox-addheader').checked){
-			patchedRom=patchedRom.slice(headerSize);
+function preparePatchedRom(originalRom, patchedRom, headerSize) {
+    // Set file name
+    if (AppSettings.outputFileNameMatch) {
+        patchedRom.fileName = patchFile.fileName.replace(
+            /\.\w+$/i,
+            (/\.\w+$/i.test(originalRom.fileName) ?
+                originalRom.fileName.match(/\.\w+$/i)[0] :
+                '')
+        );
+    } else {
+        patchedRom.fileName = "Spectrobes.gba";
+    }
 
-		}
-	}
+    // Always treat it as binary
+    patchedRom.fileType = "application/octet-stream";
+
+    // Header processing
+    if (headerSize) {
+        if (el('checkbox-removeheader').checked) {
+            var patchedRomWithOldHeader = new MarcFile(headerSize + patchedRom.fileSize);
+            oldHeader.copyToFile(patchedRomWithOldHeader, 0);
+            patchedRom.copyToFile(patchedRomWithOldHeader, 0, patchedRom.fileSize, headerSize);
+            patchedRomWithOldHeader.fileName = patchedRom.fileName;
+            patchedRomWithOldHeader.fileType = patchedRom.fileType;
+            patchedRom = patchedRomWithOldHeader;
+        } else if (el('checkbox-addheader').checked) {
+            patchedRom = patchedRom.slice(headerSize);
+        }
+    }
+
+   
 
 
 
@@ -750,7 +761,16 @@ function preparePatchedRom(originalRom, patchedRom, headerSize){
 
 
 	setMessage('apply');
-	patchedRom.save();
+	
+	 // Ensure proper download without .txt extension
+    const blob = new Blob([patchedRom.data || patchedRom], { type: patchedRom.fileType });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = patchedRom.fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
 	
 	//debug: create unheadered patch
 	/*if(headerSize && el('checkbox-addheader').checked){
