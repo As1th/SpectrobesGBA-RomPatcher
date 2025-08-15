@@ -762,14 +762,7 @@ function preparePatchedRom(originalRom, patchedRom, headerSize) {
 
 	setMessage('apply');
 	patchedRom.save();
-	 // Ensure proper download without .txt extension
-    const blob = new Blob([patchedRom.data || patchedRom], { type: patchedRom.fileType });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = patchedRom.fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+	
 
 	
 	//debug: create unheadered patch
